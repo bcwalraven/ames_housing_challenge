@@ -18,7 +18,30 @@ The EDA process revealed the following insights:
 - There was a significant amount of mulitcolinearity between the features.
 - There were two obvious outliers that had high square footage but sold for low sale price, these were removed. Taking the LN of this feature imporved its correlation with saleprice almost as much as removing the outliers.
 - Overall quality was highly coordinated as a set ordinal values. The feature was left as is without changing to dummy variables.
- - Overall condition had an unusual number of 5 ratings which reversed the underlying positive correlation. This feature was not used. 
+ - Overall condition had an unusual number of 5 ratings which reversed the underlying positive correlation. This feature was not used.
+<br>
+ 
+Saleprice Skew
+---
+<img src="./images/skew.png">
+<br>
+
+Outlier Comparison
+---
+<img src="./images/outliers.png">
+<br>
+
+Overall Quality as Ordinal Values
+---
+<img src="./images/overall_qual.png">
+<br>
+
+Unusual Distribution of Overall Condition
+---
+<img src="./images/overall_cond.png">
+<br>
+
+
 
 The following featuers were engineered from the data:
 - Calculating the total finished floor area significantly improves the correlation compared to above ground living area.
@@ -27,12 +50,36 @@ The following featuers were engineered from the data:
 - Positive features totaled the number of positive featurs in the house
 - Negative features totaled the number of negative features in the house 
 
+Engineered Feature Correlation
+---
+<img src="./images/total_fin.png">
+<br>
+
+---
+<img src="./images/total_bath.png">
+<br>
+
+---
+<img src="./images/positive.png">
+<br>
+
+---
+<img src="./images/negative.png">
+<br>
+
 
 Results and Conclusions:
 - The lasso model was chosen as the best linear regression model
 - You can build a strong predictive model for home sale prices with feature engineering and a few strong predictors
+- The error residuals indicated that using the natural log of saleprice would not be effective, possibly due to the use of the polynomial features 
 - If more features are added I expect taking the LN of saleprice and features will be more effective
 - For future submissions, incorporating a wider variety of features despite lower correlation and multicolinarity may boost performance if incorporated with regularization through Ridge, Lasso, ElasticNet
+<br>
+
+Error Residuals
+---
+<img src="./images/residuals.png">
+<br>
 
 # Data Dictionary:
 
